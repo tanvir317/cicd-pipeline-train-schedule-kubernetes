@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster2020-856b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster2020-856b"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster2020-856b"
+    spec:
+      containers:
+        - name: "myakscluster2020-856b"
+          image: "firstcontainerregistry2020.azurecr.io/myakscluster2020"
+          ports:
+          - containerPort: 8080
